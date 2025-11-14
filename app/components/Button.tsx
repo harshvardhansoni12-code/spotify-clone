@@ -5,7 +5,7 @@ interface ButtonProps {
   className?: string;
 }
 
-const LogOut: React.FC<ButtonProps> = ({ children, className }) => {
+const Button: React.FC<ButtonProps> = ({ children, className }) => {
   return (
     <button
       className={
@@ -17,4 +17,4 @@ const LogOut: React.FC<ButtonProps> = ({ children, className }) => {
   );
 };
 
-export default LogOut;
+export default Button;

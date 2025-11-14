@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "./components/Header";
-import LogOut from "./components/Button";
+import ListItem from "./components/ListItem";
+
 export default function Home() {
   return (
     <div
@@ -14,8 +15,14 @@ export default function Home() {
     "
     >
       <div className="">
-        <Header className="text-xl">Welcome Harsh!</Header>
+        <Header className="text-3xl ">
+          <div>Welcome Harsh!</div>
+          <ListItem href="/liked" image="liked.png" name="Liked Songs" />
+        </Header>
       </div>
+      <div>NEW SONGS!</div>
+      <div>list of new songs!</div>
     </div>
   );
 }
+//56:33

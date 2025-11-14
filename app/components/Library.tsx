@@ -11,8 +11,8 @@ const Library = () => {
   return (
     <>
       <div>
-        <div className="flex flex-cols items-center space-between gap-x-20">
-          <div className="flex flex-cols items-center gap-x-2">
+        <div className="flex flex-cols items-center space-between gap-x-20 ">
+          <div className="flex flex-cols items-center gap-x-2 p-1.5">
             <TbPlaylist size={26} className="text-neutral-500" />
             <p className="text-neutral-500 font-medium text-md">Your Library</p>
           </div>
@@ -23,7 +23,7 @@ const Library = () => {
             />
           </div>
         </div>
-        <div>Library of songs!</div>
+        <div className="p-2">Library of songs!</div>
       </div>
     </>
   );

@@ -33,10 +33,12 @@ const SideBar: React.FC<SideBarProps> = ({ children }) => {
     },
   ];
   return (
-    <div className=" flex h-full">
+    <div className=" flex h-full ">
       <div
         className="
+        hidden
         md:flex
+        md:blocked
         flex-col
         gap-y-2
         bg-black-500
@@ -47,7 +49,7 @@ const SideBar: React.FC<SideBarProps> = ({ children }) => {
         rounded-xl
       "
       >
-        <Box className="flex flex-col gap-y-4 px-5 py-4">
+        <Box className="flex flex-col gap-y-4 px-5 py-4 m-1 ">
           <div>
             {routes.map((item) => (
               //@ts-ignore
@@ -55,7 +57,7 @@ const SideBar: React.FC<SideBarProps> = ({ children }) => {
             ))}
           </div>
         </Box>
-        <Box className="h-full overflow-y-auto">
+        <Box className="h-full overflow-y-auto m-1">
           <Library />
         </Box>
       </div>
