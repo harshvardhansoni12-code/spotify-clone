@@ -61,7 +61,6 @@ const SideBar: React.FC<SideBarProps> = ({ children }) => {
           <Library />
         </Box>
       </div>
-      <main>{children}</main>
     </div>
   );
 };

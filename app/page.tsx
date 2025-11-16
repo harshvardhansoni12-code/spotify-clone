@@ -20,8 +20,10 @@ export default function Home() {
           <ListItem href="/liked" image="liked.png" name="Liked Songs" />
         </Header>
       </div>
-      <div>NEW SONGS!</div>
-      <div>list of new songs!</div>
+      <main>
+        <div>NEW SONGS!</div>
+        <div>list of new songs!</div>
+      </main>
     </div>
   );
 }

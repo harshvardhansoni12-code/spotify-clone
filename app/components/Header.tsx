@@ -51,8 +51,8 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             </div>
           </div>
           <div>
-            <div className="flex block md:hidden justify-between items-center">
-              <div className="flex gap-x-2 items-center justify-between gap-x-2">
+            <div className="flex justify-between gap-x-140  md:hidden">
+              <div className="flex gap-x-2">
                 <button className="text-neutral-500 hover:text-white hover:bg-black p-1.5 rounded-full">
                   <HiHome />
                 </button>
@@ -60,9 +60,11 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                   <HiSearch />
                 </button>
               </div>
-              <Button className="text-sm font-bold hover:bg-black p-1 rounded-xl text-white">
-                Sign Up
-              </Button>
+              <div>
+                <Button className="text-sm font-bold  hover:bg-black p-1 rounded-xl text-white">
+                  Sign Up
+                </Button>
+              </div>
             </div>
           </div>
         </div>
