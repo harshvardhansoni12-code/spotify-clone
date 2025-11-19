@@ -3,6 +3,10 @@ import { Figtree } from "next/font/google";
 import "./globals.css";
 import SideBar from "./components/Sidebar";
 import SupabaseProvider from "../providers/SupabaseProvider";
+import UserProvider from "@/providers/UserProvider";
+import Modal from "./components/Modal";
+import AuthModal from "./components/AuthModal";
+import ModalProvider from "@/providers/ModalProvider";
 const font = Figtree({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Music-app",
@@ -19,7 +23,10 @@ export default function RootLayout({
       <body className={font.className}>
         <div className="flex h-screen">
           <SupabaseProvider>
-            <SideBar>{children}</SideBar>
+            <UserProvider>
+              <ModalProvider />
+              <SideBar>{children}</SideBar>
+            </UserProvider>
           </SupabaseProvider>
           <main className="flex-1 bg-neutral-900 rounded-xl m-3 mr-1">
             {children}
