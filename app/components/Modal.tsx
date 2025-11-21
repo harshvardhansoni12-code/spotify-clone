@@ -9,8 +9,6 @@ interface ModalProps {
   title: string;
   description: string;
   children: React.ReactNode;
-  inputInfo?: string;
-  placeholder?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -19,12 +17,10 @@ const Modal: React.FC<ModalProps> = ({
   title,
   description,
   children,
-  inputInfo,
-  placeholder,
 }) => {
   return (
     <div>
-      <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
+      <Dialog.Root open={isOpen} onOpenChange={onChange}>
         <Dialog.Portal>
           <Dialog.Overlay
             className="

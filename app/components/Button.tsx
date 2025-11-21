@@ -3,14 +3,17 @@ import { twMerge } from "tailwind-merge";
 interface ButtonProps {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, className }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => {
   return (
     <button
-      className={
-        (twMerge(`rounded-xl hover:bg-white hover:cursor-pointer`), className)
-      }
+      onClick={onClick}
+      className={twMerge(
+        "rounded-xl hover:bg-white hover:cursor-pointer",
+        className
+      )}
     >
       {children}
     </button>

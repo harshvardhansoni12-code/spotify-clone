@@ -1,8 +1,11 @@
-"user Client";
+"use client";
 import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome, HiSearch } from "react-icons/hi";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useRouter } from "next/navigation";
+import AuthModal from "./AuthModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -10,6 +13,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
+  const authModal = useAuthModal();
+  const router = useRouter();
   return (
     <>
       <div
@@ -41,11 +46,17 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 </button>
               </div>
               <div className="flex justify-between gap-x-2">
-                <Button className="text-black  font-bold p-1.5 text-white hover:bg-black hover:cursor-pointer hover:opacity-75 transition  text-sm rounded-2xl">
+                <Button
+                  onClick={authModal.onOpen}
+                  className="text-black  font-bold p-1.5 text-white hover:bg-black hover:cursor-pointer hover:opacity-75 transition  text-sm rounded-2xl"
+                >
                   Sign Up
                 </Button>
-                <Button className="text-black bg-green-500 font-bold p-1.5 hover:text-white hover:bg-black hover:cursor-pointer hover:opacity-75 transition text-sm rounded-2xl">
-                  Sign In
+                <Button
+                  onClick={authModal.onOpen}
+                  className="text-black bg-green-500 font-bold p-1.5 hover:text-white hover:bg-black hover:cursor-pointer hover:opacity-75 transition text-sm rounded-2xl"
+                >
+                  Log In
                 </Button>
               </div>
             </div>
