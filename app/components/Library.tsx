@@ -1,3 +1,4 @@
+import { useActionState } from "react";
 import {
   AiFillFileAdd,
   AiFillPlayCircle,
@@ -6,8 +7,22 @@ import {
 } from "react-icons/ai";
 import { BiBookAdd, BiMessageSquareAdd, BiPlusMedical } from "react-icons/bi";
 import { TbPlaylist } from "react-icons/tb";
-
+//
+import useAuthModal from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
+import useUploadModal from "@/hooks/useUploadModal";
 const Library = () => {
+  const authModal = useAuthModal();
+  const UploadModal = useUploadModal();
+  const { user } = useUser();
+
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
+    return UploadModal.onOpen();
+  };
+  //
   return (
     <>
       <div>
@@ -19,6 +34,7 @@ const Library = () => {
           <div>
             <BiMessageSquareAdd
               size={26}
+              onClick={onClick}
               className="text-neutral-500 hover:cursor-pointer hover:text-white"
             />
           </div>

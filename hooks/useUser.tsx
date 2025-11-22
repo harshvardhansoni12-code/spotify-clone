@@ -1,3 +1,5 @@
+"use client";
+
 import { Subscription, UserDetails } from "@/types";
 import { User } from "@supabase/auth-helpers-nextjs";
 import {
@@ -78,5 +80,6 @@ export const useUser = () => {
   if (context === undefined) {
     throw new Error("useUser used within a MyUserContextProvider");
   }
+  return context;
 };
 //1:45

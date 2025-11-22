@@ -6,7 +6,7 @@ import Box from "./Box";
 import Library from "./Library";
 import SideBarItem from "./SideBarItem";
 interface SideBarProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const SideBar: React.FC<SideBarProps> = ({ children }) => {

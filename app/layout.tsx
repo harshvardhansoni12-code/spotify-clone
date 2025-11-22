@@ -7,6 +7,8 @@ import UserProvider from "@/providers/UserProvider";
 import Modal from "./components/Modal";
 import AuthModal from "./components/AuthModal";
 import ModalProvider from "@/providers/ModalProvider";
+import { MyUserContextProvider } from "@/hooks/useUser";
+import ToasterProvider from "@/providers/ToasterProvider";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -24,18 +26,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <div className="flex h-screen">
+          <ToasterProvider />
           <SupabaseProvider>
-            <UserProvider>
-              <ModalProvider />
-              {/* 🚀 Mount Auth Modal here */}
-              <AuthModal />
-
-              <SideBar>{children}</SideBar>
-            </UserProvider>
+            <MyUserContextProvider>
+              <UserProvider>
+                <ModalProvider />
+                {/* 🚀 Mount Auth Modal here */}
+                <AuthModal />
+                <SideBar />
+                {children}
+              </UserProvider>
+            </MyUserContextProvider>
           </SupabaseProvider>
-          <main className="flex-1 bg-neutral-900 rounded-xl m-3 mr-1">
-            {children}
-          </main>
         </div>
       </body>
     </html>
